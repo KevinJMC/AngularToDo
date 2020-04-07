@@ -1,0 +1,11 @@
+<ul>
+  <li *ngFor="let todo of toDoList">
+    <div class="card">
+      <input type="checkbox" class="completed-check" [(ngModel)]="todo.completed" />
+      {{todo.text}}
+      <span class="delete-x" (click)="deleteTodo($event)">
+        &nbsp;&#10007;&nbsp;
+      </span>
+    </div>
+  </li>
+</ul>
