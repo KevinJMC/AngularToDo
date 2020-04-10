@@ -1,22 +1,5 @@
-<h1 ngClass="title">To Do List</h1>
+<app-header class="app-header"></app-header>
 
-<h3>Sort by:</h3>
-<div className="sort-buttons">
-  <span><button (click)="sortListAlphabetically()">Alphabetical</button></span>
-  <span><button (click)="sortByTime()">Time</button></span>
-</div>
+<app-form class="app-input-form"></app-form>
 
-<form (submit)=submitNewTask($event)>
-  <div>
-  <label for="todo">Add a new item to the todo list <br />
-  <input type="text" id="todo" name="main-input" [(ngModel)]="todoInput">
-  <button type="submit">Add New Task</button>
-  </label>
-</div>
-</form>
-
-<app-to-do-list>
-
-</app-to-do-list>
-
-<
+<app-task-list-card class="app-task-list-card"></app-task-list-card>

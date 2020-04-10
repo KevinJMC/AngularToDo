@@ -1,35 +1,52 @@
-import { Injectable } from '@angular/core';
-import { Todo } from '../todo.model';
+import { Injectable } from '@angular/core'
+import { Task } from '../models/task.model'
+import { BehaviorSubject, Observable } from 'rxjs'
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ToDoService {
-  public todoList: Todo[] = [];
+  private list: Task[] = []
+  private _todoList: BehaviorSubject<Task[]> = new BehaviorSubject(this.list)
+  public readonly todoList: Observable<Task[]> = this._todoList.asObservable()
 
-  constructor() { }
-
-  publishToDoList() {
-    return this.todoList;
-  }
-
-  addTodoToList(todo: Todo) {
+  addTodoToList(todo: Task): void {
     if (this.verifyToDo(todo)) {
-      this.todoList.push(todo);
+      this.list.push(todo)
+      this._todoList.next(this.list)
     }
-    return this.todoList;
   }
 
-  removeToDoFromList(todoId: number) {
-    this.todoList = this.todoList.filter(listItem => todoId !== listItem.id);
+  removeToDoFromList(todo: Task): void {
+    this.list = this.list.filter((listItem) => todo.id !== listItem.id)
+    this._todoList.next(this.list)
   }
 
-  completeToDo(todo: Todo) {
-    todo.completed = true;
+  toggleTaskCompletion(todo: Task): void {
+    this.list.forEach((task) => {
+      if (task.id === todo.id) {
+        task.completed = !task.completed
+        return task
+      }
+    })
+    this._todoList.next(this.list)
   }
 
-  private verifyToDo(todo: Todo): boolean {
-    return todo && todo.text && todo.text.length > 0 && typeof todo.id == 'number';
+  sortListAlphabetically(): void {
+    this.list = this.list.sort((a, b) => {
+      return a.text.localeCompare(b.text)
+    })
+    this._todoList.next(this.list)
   }
 
+  sortByTime(): void {
+    this.list = this.list.sort((a, b) => {
+      return a.id - b.id
+    })
+    this._todoList.next(this.list)
+  }
+
+  verifyToDo(todo: Task): boolean {
+    return todo.text !== '' && typeof todo.id == 'number'
+  }
 }

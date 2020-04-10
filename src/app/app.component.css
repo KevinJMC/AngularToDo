@@ -1,0 +1,11 @@
+.app-task-list-card {
+  flex: 1 1 auto;
+  margin-top: 10em;
+  padding: 20%;
+}
+
+.app-input-form {
+  color: purple;
+  padding: 5%;
+  margin: 5%;
+}
