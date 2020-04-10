@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: silver;
+  text-align: center;
+}
+
+mat-card-header {
+  display: inherit !important;
+  text-align: center !important;
+}
+
+mat-card {
+  height: 100%;
+}
+
+mat-stroked-button {
+  width: 33%;
+}
+
+h2 {
+  flex: auto;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.mat-form-field-label {
+  color: #7b1fa2 !important;
+}
+.mat-form-field-underline {
+  background-color: #7b1fa2 !important;
+}
