@@ -1,0 +1,18 @@
+.delete-x {
+  border: 2px black;
+}
+
+.card {
+  border-radius: 5px;
+  display: grid;
+  grid-template-rows: 2fr 1fr;
+  grid-gap: 10px;
+  cursor: pointer;
+  border: 3px dotted black;
+  transition: all 0.6s;
+}
+
+.todo-text {
+  font-size: larger;
+  flex: auto;
+}

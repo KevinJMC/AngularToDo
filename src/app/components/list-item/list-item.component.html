@@ -1,0 +1,10 @@
+<mat-list-item>
+  <mat-checkbox color="primary" [(ngModel)]="listItem.completed">
+    <span [class.completed]="listItem.completed">{{listItem.text}}</span>
+  </mat-checkbox>
+  <span>
+    <button mat-icon-button matTooltip="Delete This Task" matTooltipPosition="right" color="warn">
+      <mat-icon (click)="deleteTodo(listItem)">cancel</mat-icon>
+    </button>
+  </span>
+</mat-list-item>

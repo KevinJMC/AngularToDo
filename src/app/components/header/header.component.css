@@ -1,0 +1,11 @@
+.row-fill {
+  flex: 1 1 auto;
+}
+
+button {
+  width: 100%;
+}
+
+.sort-button {
+  width: 33%;
+}

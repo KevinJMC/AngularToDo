@@ -1,0 +1,9 @@
+<form id="input-todo-form" (ngSubmit)="submitNewTask(todoInput)">
+  <mat-form-field>
+    <mat-label>Add a new item to the todo list</mat-label>
+    <input matInput type="text" id="todo" #todoInput>
+  </mat-form-field>
+  <button mat-mini-fab color="primary" type="submit">
+    <mat-icon>assignment_returned</mat-icon>
+  </button>
+</form>

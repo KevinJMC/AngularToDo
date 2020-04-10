@@ -1,0 +1,9 @@
+<mat-card class="task-list-card" color="primary">
+  <mat-card-header>
+    <mat-card-title>Tasks to Complete</mat-card-title>
+    <mat-card-subtitle>Number of Tasks To Complete : {{ countUncompleted(toDoList) }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <app-to-do-list [toDoList]="toDoList"></app-to-do-list>
+  </mat-card-content>
+</mat-card>

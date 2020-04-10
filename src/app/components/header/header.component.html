@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <h2>To Do List</h2>
+  </mat-toolbar-row>
+  <mat-toolbar-row>
+    <span class="row-fill"></span>
+    <span flex class="sort-button">
+      <button mat-stroked-button color="accent" (click)="sortListAlphabetically()">Alphabetical
+      </button>
+    </span>
+    <span class="row-fill"></span>
+    <span flex class="sort-button">
+      <button mat-stroked-button color="accent" (click)="sortByTime()">Most Recent</button>
+    </span>
+    <span class="row-fill"></span>
+  </mat-toolbar-row>
+</mat-toolbar>

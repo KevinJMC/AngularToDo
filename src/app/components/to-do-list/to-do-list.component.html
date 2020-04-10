@@ -1,0 +1,5 @@
+<mat-list *ngIf="toDoList.length > 0">
+  <form>
+    <list-item *ngFor="let todo of toDoList" [listItem]="todo"></list-item>
+  </form>
+</mat-list>
