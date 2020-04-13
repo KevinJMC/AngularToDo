@@ -16,12 +16,15 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-
+        
+    - name: Install Angular CLI
+      run: npm install -g @angular/cli
+      
     - name: Install dependencies
       run: npm install
       
     - name: Start app
-      run: npm build
+      run: npm run-script build
       
     - name: Deploy to Heroku
       uses: AkhileshNS/heroku-deploy@v3.0.2
