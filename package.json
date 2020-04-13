@@ -7,6 +7,7 @@
   },
   "scripts": {
     "ng": "ng",
+    "prestart": "npm install -g npm@latest; npm install -g @angular/cli;",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
@@ -23,6 +24,7 @@
     "@angular/common": "~9.1.0",
     "@angular/compiler": "~9.1.0",
     "@angular/core": "~9.1.0",
+    "@angular-devkit/build-angular": "~0.901.0",
     "@angular/forms": "~9.1.0",
     "@angular/material": "9.2.0",
     "@angular/platform-browser": "~9.1.0",
@@ -34,7 +36,6 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.901.0",
     "@angular/compiler-cli": "~9.1.0",
     "@angular/language-service": "~9.1.0",
     "@types/hammerjs": "2.0.36",

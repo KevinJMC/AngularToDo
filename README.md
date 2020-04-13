@@ -1,3 +1,5 @@
+![CI-todo](https://github.com/KevinJMC/AngularToDo/workflows/CI-todo/badge.svg)
+
 # Todo
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0.
